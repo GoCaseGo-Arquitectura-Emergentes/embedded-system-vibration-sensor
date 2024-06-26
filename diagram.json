@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "author": "YourName",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd2",
+      "top": 188.8,
+      "left": 130.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "mpu6050",
+      "top": 234.22,
+      "left": -64.88,
+      "attrs": { "label": "MPU6050" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "esp:21", "lcd2:SDA", "green", [ "v-50", "h100" ] ],
+    [ "esp:22", "lcd2:SCL", "yellow", [ "v-50", "h100" ] ],
+    [ "esp:21", "mpu6050:SDA", "magenta", [ "v50", "h200" ] ],
+    [ "esp:22", "mpu6050:SCL", "cyan", [ "v50", "h200" ] ],
+    [ "esp:5V", "lcd2:VCC", "red", [ "v-150", "h100" ] ],
+    [ "esp:GND", "lcd2:GND", "black", [ "v-150", "h100" ] ],
+    [ "esp:GND", "mpu6050:GND", "black", [ "v150", "h200" ] ],
+    [ "esp:GND.1", "mpu6050:GND", "black", [ "v0" ] ],
+    [ "esp:GND.1", "lcd2:GND", "black", [ "v0" ] ],
+    [ "lcd2:SDA", "esp:D21", "green", [ "h0" ] ],
+    [ "lcd2:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "lcd2:SCL", "esp:D22", "yellow", [ "h0" ] ],
+    [ "mpu6050:SCL", "esp:D22", "yellow", [ "v-57.6", "h131.18" ] ],
+    [ "mpu6050:SDA", "esp:D21", "white", [ "v-76.8", "h111.88" ] ],
+    [ "mpu6050:VCC", "esp:3V3", "red", [ "h0.08", "v-90.2" ] ]
+  ],
+  "dependencies": {}
+}
