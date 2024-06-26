@@ -1,5 +1,6 @@
 # Embedded Vibration Sensor
 <h1 align="center"> <img src="https://raw.githubusercontent.com/GoCaseGo-Arquitectura-Emergentes/embedded-system-vibration-sensor/main/assets/screenshot.png" alt="Project Screenshot" height="350"> </h1>
+
 ## Project Description
 
 This Smart Fall Detection System is designed to provide an innovative solution for monitoring potential falls of luggage using an embedded accelerometer sensor. The smart sensor can accurately detect sudden movements indicative of a fall and can be equipped with additional features such as cloud connectivity and a user-friendly interface for real-time notifications.
